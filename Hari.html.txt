@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Services Update Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <header>
+        <h1>Banking Services Update Portal</h1>
+    </header>
+
+
+    <div class="container">
+        <h2>Select an Action</h2>
+
+
+        <div class="feature-button">
+            <button onclick="showFeature('addressFeature')">Address Change</button>
+        </div>
+
+
+        <div class="feature-button">
+            <button onclick="showFeature('billingFeature')">Billing Data Change</button>
+        </div>
+
+
+        <div class="feature-button">
+            <button onclick="showFeature('serviceFeature')">Service Change</button>
+        </div>
+
+
+        <div class="feature-button">
+            <button onclick="showFeature('infoFeature')">Information Update</button>
+        </div>
+
+
+        <!-- Address Change Form -->
+        <form id="addressFeature">
+            <label for="address">Enter New Address:</label>
+            <textarea id="address" placeholder="Enter your new address here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <!-- Billing Data Change Form -->
+        <form id="billingFeature">
+            <label for="billing-info">Enter New Billing Information:</label>
+            <textarea id="billing-info" placeholder="Enter updated billing information..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <!-- Service Change Form -->
+        <form id="serviceFeature">
+            <label for="serviceAction">Select Action:</label>
+            <select id="serviceAction" onchange="toggleServiceFields()">
+                <option value="">--Select--</option>
+                <option value="add">Add Service</option>
+                <option value="remove">Remove Service</option>
+            </select>
+
+
+            <div id="addServiceField" style="display: none;">
+                <label for="services">Select Services to Add:</label>
+                <select id="services" multiple>
+                    <option value="savings">Savings Account</option>
+                    <option value="checking">Checking Account</option>
+                    <option value="loan">Loan Services</option>
+                    <option value="creditCard">Credit Card</option>
+                </select>
+            </div>
+
+
+            <div id="removeServiceField" style="display: none;">
+                <label for="removeServices">Select Services to Remove:</label>
+                <select id="removeServices" multiple>
+                    <option value="savings">Savings Account</option>
+                    <option value="checking">Checking Account</option>
+                    <option value="loan">Loan Services</option>
+                    <option value="creditCard">Credit Card</option>
+                </select>
+            </div>
+
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <!-- Information Update Form -->
+        <form id="infoFeature">
+            <label for="infoType">Select Information to Update:</label>
+            <select id="infoType" onchange="toggleInfoFields()">
+                <option value="">--Select--</option>
+                <option value="email">Email Update</option>
+                <option value="phone">Phone Number Update</option>
+            </select>
+
+
+            <div id="emailField" style="display: none;">
+                <label for="email">Enter New Email:</label>
+                <input type="email" id="email" placeholder="Enter your new email..." required>
+            </div>
+
+
+            <div id="phoneField" style="display: none;">
+                <label for="phone">Enter New Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter your new phone number..." required>
+            </div>
+
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <!-- Confirmation Message -->
+        <div class="message" id="confirmationMessage"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>

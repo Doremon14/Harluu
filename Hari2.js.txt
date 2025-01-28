@@ -1,0 +1,26 @@
+function showFeature(featureId) {
+    // Hide all forms
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => form.style.display = 'none');
+
+
+    // Show the selected form
+    const selectedForm = document.getElementById(featureId);
+    if (selectedForm) {
+        selectedForm.style.display = 'block';
+    }
+}
+
+
+function toggleServiceFields() {
+    const action = document.getElementById('serviceAction').value;
+    document.getElementById('addServiceField').style.display = action === 'add' ? 'block' : 'none';
+    document.getElementById('removeServiceField').style.display = action === 'remove' ? 'block' : 'none';
+}
+
+
+function toggleInfoFields() {
+    const infoType = document.getElementById('infoType').value;
+    document.getElementById('emailField').style.display = infoType === 'email' ? 'block' : 'none';
+    document.getElementById('phoneField').style.display = infoType === 'phone' ? 'block' : 'none';
+}
